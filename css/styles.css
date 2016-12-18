@@ -1,0 +1,14 @@
+#input {
+	position : absolute;
+    top      : 50;
+    left    : 0;
+    height   : 100%;
+    width    : 50%;
+}
+#output {
+	position : absolute;
+    top      : 50;
+    right     : 0;
+    height   : 100%;
+    width    : 50%;
+}
