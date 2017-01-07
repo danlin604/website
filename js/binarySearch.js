@@ -4,28 +4,25 @@ document.write("Binary Search Algorithm<br><br>");
 var primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97];
 
 function binarySearch(array, targetValue) {
-	var min = 0;
-	var max = array.length - 1;
-	var mid;
+	var min = 0,
+	    max = array.length - 1;
 
 	while (max >= min) {
-		mid = Math.floor((max+min)/2);
 
-		if (primes[mid] < targetValue) {			// Search higher
+		var mid = Math.floor((max + min) / 2);
+
+		if (array[mid] < targetValue) {			    // Search higher
 			min = mid + 1;
-
-		} else if (primes[mid] > targetValue) {		// Search lower
+		} else if (array[mid] > targetValue) {		// Search lower
 			max = mid - 1;
-
-		} else if (primes[mid] === targetValue) {	// Found
-			document.write("found=" + primes[mid] + " @" + mid + "<br>");
-			return 1;
-
+		} else if (array[mid] === targetValue) {	// Exist
+            document.write("found=" + array[mid] + " @" + mid + "<br>");
+			return true;
 		} else {
-			document.write("ERROR <br>");
+			// Unexpected
 		}
 	}
-	return -1;
+	return false;                                   // Not exist
 }
 
 //Test cases

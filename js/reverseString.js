@@ -9,6 +9,3 @@ function FirstReverse(str) {
   
   return str;         
 }
-   
-// keep this function call here 
-FirstReverse(readline());        

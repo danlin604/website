@@ -11,8 +11,5 @@ function LetterChanges(str) {
   });
   
   return captialized;
-}
-   
-// keep this function call here 
-LetterChanges(readline());                            
+}                     
 

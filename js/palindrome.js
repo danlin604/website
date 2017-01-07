@@ -1,22 +1,25 @@
 //Palindrome
 document.write("Palindrome Algorithm<br><br>");
 
-var test1 = "Anna";
-var test2 = "AnaNa";
-var test3 = "H e   nr   y";
-var test4 = "Eva Can I Stab Bats In A Cave";
+var test1 = "Anna", 
+    test2 = "AnaNa",
+    test3 = "H e   nr   y",
+    test4 = "Eva Can I Stab Bats In A Cave";
+
 
 function palindrome(s) {
+    
 	s = s.toLowerCase();
-	s = s.replace(/\s/g,'');
-	var mid = Math.floor(s.length/2);
+	s = s.replace(/\s/g,'');            // Ignore white-space
 
-	for (count = 0; count <= mid; count++) {
-		if (s.charAt(count) !== s.charAt(s.length - 1 - count)) {
-			return -1;	// Is not palindrome
+	var len = Math.floor(s.length / 2);
+
+	for ( var i = 0; i < len; i++) {
+		if (s.charAt(i) !== s.charAt(s.length - 1 - i)) {
+			return false;
 		}
 	}
-	return 1;			// Is palindrome
+	return true;
 }
 
 //Test cases
