@@ -9,28 +9,34 @@
 	<meta name="author" 		content="Daniel Lin">
 	<meta name="viewport"		content="width=device-width, initial-scale=1.0">
 
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
 	<link rel="stylesheet" href="../css/styles.css">
 	
 	<style type="text/css">
-		textarea, iframe {
-			border: 2px solid #ddd;
-			height: 500px;
-			width: 100%;	  
-		}
+		
 	</style>
 
 </head>
 
 <body>
-	<h1>Fiddle</h1>
-	<p>Write and run your own JavaScript code!</p>
-	<button onclick="runCode()">Run Code</button>
 
-	<!-- src code -->
-	<textarea name="src" id="src"></textarea>
+  <header>
+    <h1>Fiddle</h1>    
+  </header>
 
-	<!-- console -->
-	<code name="dest" id="dest"></code>
+  <div id="content">
+
+    <div id="content-description">
+      <p>Write and run your own JavaScript code!</p>
+      <button id="run" onclick="runCode()">Run Code</button>
+    </div>    
+
+    <!-- src code -->
+    <textarea name="src" id="src"></textarea>
+
+    <!-- console -->
+    <textarea name="console" id="console"></textarea>
+  </div>	
 
 	<script src="../js/fiddle.js"></script>
 </body>

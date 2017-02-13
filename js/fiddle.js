@@ -8,20 +8,23 @@ console.error
 */
 
 /* Overwrite console.log */
-/*(function () {
+(function () {
   let old = console.log;
-  let logger = document.getElementById('dest')
+  let logger = document.getElementById('console')
   console.log = function (message) {
     if (typeof message == 'object') {
-      logger.innerHTML += (JSON && JSON.stringify ? JSON.stringify(message) : message) + '<br />'
+      logger.value += (JSON && JSON.stringify ? JSON.stringify(message) : message) + '\n'
     } else {
-      logger.innerHTML += message + '<br />'
+      logger.value += message + '\n'
     }
   }
-})();*/
+})();
 
 function runCode() {
+  let logger = document.getElementById('console')  
   let src = document.getElementById('src').value
+  logger.value = ''
+
   eval(src)
 }
 
