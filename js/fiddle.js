@@ -17,24 +17,19 @@ console.error
 
   window.onerror = function (msg, url, lineNo, columnNo, error) {
 
-    var string = msg.toLowerCase();
-    var substring = "script error";
+    let string = msg.toLowerCase()
 
-    if (string.indexOf(substring) > -1) {
-        print('Script Error: See Browser Console for Detail')
-    } else {
-        var message = [
-            'Message: ' + msg,
-            'URL: ' + url,
-            'Line: ' + lineNo,
-            'Column: ' + columnNo,
-            'Error object: ' + JSON.stringify(error)
-        ].join(' - ');
+    let message = [
+        'Message: ' + msg,
+        'URL: ' + url,
+        'Line: ' + lineNo,
+        'Column: ' + columnNo,
+        'Error object: ' + JSON.stringify(error)
+    ].join(' - ')
 
-        print(message)
-    }
+    print(message)
     
-    return false // surpress error in console
+    return false // surpress error in console?
   }
 
   console.log = function (msg) {
