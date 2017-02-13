@@ -7,17 +7,48 @@ console.warn
 console.error
 */
 
-/* Overwrite console.log */
+// console.log
 (function () {
-  let old = console.log;
-  let logger = document.getElementById('console')
-  console.log = function (message) {
-    if (typeof message == 'object') {
-      logger.value += (JSON && JSON.stringify ? JSON.stringify(message) : message) + '\n'
+  let _log = console.log
+  //let _error = console.error
+  //let _warning = console.warning
+
+  let output = document.getElementById('console')
+
+  window.onerror = function (msg, url, lineNo, columnNo, error) {
+
+    var string = msg.toLowerCase();
+    var substring = "script error";
+
+    if (string.indexOf(substring) > -1) {
+        print('Script Error: See Browser Console for Detail')
     } else {
-      logger.value += message + '\n'
+        var message = [
+            'Message: ' + msg,
+            'URL: ' + url,
+            'Line: ' + lineNo,
+            'Column: ' + columnNo,
+            'Error object: ' + JSON.stringify(error)
+        ].join(' - ');
+
+        print(message)
     }
+    
+    return false // surpress error in console
   }
+
+  console.log = function (msg) {
+    print(msg)
+  }
+
+  function print(msg) {
+    if (typeof msg == 'object') {
+      output.value += (JSON && JSON.stringify ? JSON.stringify(msg) : msg) + '\n'
+    } else {
+      output.value += msg + '\n'
+    }    
+  }
+
 })();
 
 function runCode() {
