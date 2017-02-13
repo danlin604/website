@@ -1,22 +1,9 @@
-/* Console 
-var console = {};
-console.log = function(){};
-window.console = console;
-console.info
-console.warn
-console.error
-*/
-
-// console.log
-(function () {
+/* Init */
+(function () { // Overwrite onerror and console.log
   let _log = console.log
-  //let _error = console.error
-  //let _warning = console.warning
-
-  let output = document.getElementById('console')
+  let _console = document.getElementById('console')
 
   window.onerror = function (msg, url, lineNo, columnNo, error) {
-
     let string = msg.toLowerCase()
 
     let message = [
@@ -29,33 +16,25 @@ console.error
 
     print(message)
     
-    return false // surpress error in console?
+    return false // enable error in console 
   }
 
+  // print console.log to textarea
   console.log = function (msg) {
     print(msg)
   }
 
+  // print to textarea
   function print(msg) {
     if (typeof msg == 'object') {
-      output.value += (JSON && JSON.stringify ? JSON.stringify(msg) : msg) + '\n'
+      _console.value += (JSON && JSON.stringify ? JSON.stringify(msg) : msg) + '\n'
     } else {
-      output.value += msg + '\n'
+      _console.value += msg + '\n'
     }    
   }
+})()
 
-})();
-
-function runCode() {
-  let logger = document.getElementById('console')  
-  let src = document.getElementById('src').value
-  logger.value = ''
-
-  eval(src)
-}
-
-
-/* my code dictionary */
+/* code helper */
 const keys = new Map([
   ['Tab', 'Tab'],
   ['\'', '\''],
@@ -65,21 +44,29 @@ const keys = new Map([
   ['{', '}'], // trailing comma ignored
 ])
 
+function runCode() {
+  let logger = document.getElementById('console')  
+  let src = document.getElementById('src').value
+  logger.value = ''
+  eval(src)
+}
+
+// read textarea input
 document.querySelector('textarea').addEventListener('keydown', function(e) {
 
   if (keys.has(e.key)) {
     // get caret pos
-    let start   = this.selectionStart;
-    let end     = this.selectionEnd;
+    let start   = this.selectionStart
+    let end     = this.selectionEnd
 
-    let target  = e.target;
-    let value   = target.value;
+    let target  = e.target
+    let value   = target.value
 
     if (e.key === 'Tab') {
       // set textarea value to: text before caret + tab + text after caret
       target.value = `${value.substring(0, start)}  ${value.substring(end)}`
       // put caret at right position again (add one for the tab)
-      this.selectionStart = this.selectionEnd = start + 2;
+      this.selectionStart = this.selectionEnd = start + 2
     } else {
       target.value =  value.substring(0, start) +
                       e.key +
@@ -87,12 +74,12 @@ document.querySelector('textarea').addEventListener('keydown', function(e) {
                       value.substring(end)
 
       // put caret at right position again (add one for the tab)
-      this.selectionStart = this.selectionEnd = start + 1;
+      this.selectionStart = this.selectionEnd = start + 1
     }
 
     // prevent the focus lose
-    e.preventDefault();
+    e.preventDefault()
   } 
 
-}, false);
+}, false)
 
