@@ -34,7 +34,7 @@
   }
 })()
 
-/* code helper */
+// code syntax dictionary
 const keys = new Map([
   ['Tab', 'Tab'],
   ['\'', '\''],
