@@ -107,7 +107,7 @@ h1 {
 }
 
 #earth-beam {
-  background-color: rgba(255,255,0,0.04);
+  background-color: rgba(214,214,140,0.04);
   position: absolute;
   top: -1em;
   margin: 0;
@@ -146,30 +146,30 @@ h1 {
 }
 
 #light-beam-1 {
-  background-color: rgba(200,32,0,0.02);
+  background-color: rgba(200,32,0,0.08);
   position: absolute;
   top: -1em;
   margin: 0;
   padding: 0;
   height: 120%;
-  width: 10%;
+  width: 5%;
   left: 0;
 
   -ms-transform: rotate(9deg); /* IE 9 */
   -webkit-transform: rotate(9deg); /* Chrome, Safari, Opera */
   transform: rotate(9deg);  
 
-  -webkit-filter: blur(5px);
-  -moz-filter: blur(5px);
-  -o-filter: blur(5px);
-  -ms-filter: blur(5px);
-  filter: blur(5px);
+  -webkit-filter: blur(4px);
+  -moz-filter: blur(4px);
+  -o-filter: blur(4px);
+  -ms-filter: blur(4px);
+  filter: blur(4px);
 
   z-index: 1;  
 }
 
 #light-beam-2 {
-  background-color: rgba(32,32,100,0.03);
+  background-color: rgba(32,32,100,0.08);
   position: absolute;
   top: -1em;
   margin: 0;
@@ -235,4 +235,11 @@ h1 {
   filter: blur(5px);
 
   z-index: 2;  
+}
+
+#quote {
+  position: relative;
+  margin: 2em auto;
+  width: 80%;
+  z-index: 0;
 }
