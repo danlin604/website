@@ -1,0 +1,245 @@
+/* base */
+
+html, body {
+    margin: 0;
+    border: 0;
+    height: 100%;
+    width: 100%;
+
+    font-family: 'Roboto', sans-serif;
+    color:rgba(0,0,0,0.87);
+
+    background-color: rgba(240,240,240,0.87);
+}
+
+header {
+  color: rgba(100,100,100,0.87);
+  box-shadow: 0 8px 4px -2px rgba(200,200,200,0.87);
+  border-bottom: thin rgba(200,200,200,0.87);
+  border-bottom-style: solid;
+}
+header a {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */  
+}
+
+h1 { 
+  padding-left: 1em;
+}
+
+
+
+/*  */
+#content {
+    margin: inherit;
+    border: inherit;
+    height: inherit;
+    width: inherit;
+    background-color: inherit;
+}
+
+/* space */
+#window {
+  background-color: rgba(0,0,0,1); 
+  position: relative;
+  margin: 2em auto;
+  height: 40%;
+  width: 80%;
+  z-index: 0;
+}
+
+
+/* planet earth */
+ 
+#earth {
+  background-color: #0BB5FF;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  top: 55%;
+  left: 50%;
+  height: 2px;
+  width: 2px;
+  -webkit-border-radius:75px;
+  -moz-border-radius:75px;
+
+  z-index: 3;
+
+  animation-name: blink;
+  /**
+    * The animation should take 1.4 seconds
+    */
+  animation-duration: 5s;
+  /**
+    * It will repeat itself forever
+    */
+  animation-iteration-count: infinite;
+  /**
+    * This makes sure that the starting style (opacity: .2)
+    * of the animation is applied before the animation starts.
+    * Otherwise we would see a short flash or would have
+    * to set the default styling of the dots to the same
+    * as the animation. Same applies for the ending styles.
+    */
+  animation-fill-mode: both;  
+}
+@keyframes blink {
+    0% { 
+      opacity: .3;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: .3;
+    }
+}
+
+/* sunbeam */
+#earth-box {
+  /*background-color: rgba(240,240,0,0.05);*/
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 2em;
+  left: 80%;
+}
+
+#earth-beam {
+  background-color: rgba(214,214,140,0.04);
+  position: absolute;
+  top: -1em;
+  margin: 0;
+  padding: 0;
+  height: 120%;
+  width: 2em;
+
+  -ms-transform: rotate(7deg); /* IE 9 */
+  -webkit-transform: rotate(7deg); /* Chrome, Safari, Opera */
+  transform: rotate(7deg);  
+
+  -webkit-filter: blur(8px);
+  -moz-filter: blur(8px);
+  -o-filter: blur(8px);
+  -ms-filter: blur(8px);
+  filter: blur(8px);
+
+  z-index: 2;   
+}
+
+#light-box {
+  background-color: rgba(0,150,100,0.03);
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 60%;
+  right: 0;
+  z-index: 1;
+
+  -webkit-filter: blur(25px);
+  -moz-filter: blur(25px);
+  -o-filter: blur(25px);
+  -ms-filter: blur(25px);
+  filter: blur(25px);
+}
+
+#light-beam-1 {
+  background-color: rgba(200,32,0,0.08);
+  position: absolute;
+  top: -1em;
+  margin: 0;
+  padding: 0;
+  height: 120%;
+  width: 5%;
+  left: 0;
+
+  -ms-transform: rotate(9deg); /* IE 9 */
+  -webkit-transform: rotate(9deg); /* Chrome, Safari, Opera */
+  transform: rotate(9deg);  
+
+  -webkit-filter: blur(4px);
+  -moz-filter: blur(4px);
+  -o-filter: blur(4px);
+  -ms-filter: blur(4px);
+  filter: blur(4px);
+
+  z-index: 1;  
+}
+
+#light-beam-2 {
+  background-color: rgba(32,32,100,0.08);
+  position: absolute;
+  top: -1em;
+  margin: 0;
+  padding: 0;
+  height: 120%;
+  width: 20%;
+  left: 20%;
+  
+  -ms-transform: rotate(9deg); /* IE 9 */
+  -webkit-transform: rotate(9deg); /* Chrome, Safari, Opera */
+  transform: rotate(9deg);  
+
+  -webkit-filter: blur(10px);
+  -moz-filter: blur(10px);
+  -o-filter: blur(10px);
+  -ms-filter: blur(10px);
+  filter: blur(10px);
+
+  z-index: 1;  
+}
+
+#light-beam-3 {
+  background-color: rgba(0,150,0,0.01);
+  position: absolute;
+  top: -1em;
+  margin: 0;
+  padding: 0;
+  height: 120%;
+  width: 50%;
+  left: 8%;
+  
+  -ms-transform: rotate(9deg); /* IE 9 */
+  -webkit-transform: rotate(9deg); /* Chrome, Safari, Opera */
+  transform: rotate(9deg);  
+
+  -webkit-filter: blur(10px);
+  -moz-filter: blur(10px);
+  -o-filter: blur(10px);
+  -ms-filter: blur(10px);
+  filter: blur(10px);
+
+  z-index: 1;  
+}
+
+#light-beam-4 {
+  background-color: rgba(0,150,0,0.05);
+  position: absolute;
+  top: -1em;
+  margin: 0;
+  padding: 0;
+  height: 120%;
+  width: 5%;
+  left: 30%;
+  
+  -ms-transform: rotate(9deg); /* IE 9 */
+  -webkit-transform: rotate(9deg); /* Chrome, Safari, Opera */
+  transform: rotate(9deg);  
+
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+
+  z-index: 2;  
+}
+
+#quote {
+  position: relative;
+  margin: 2em auto;
+  width: 80%;
+  z-index: 0;
+}
