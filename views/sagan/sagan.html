@@ -14,7 +14,8 @@
 </head>
 
 <body>
-  <!-- content -->
+
+  <!-- visible content -->
   <div id="content">
 
     <!-- header -->
@@ -22,49 +23,47 @@
       <a href="../../index.html"><h1>Pale Blue Dot</h1></a>   
     </header>    
 
-    <!-- window -->
+    <!-- displays pale blue dot -->
     <div id="window">
 
       <!-- suspend earth in sunbeam -->
       <div id="sunbeam">
 
+        <!-- contain earth -->
         <div id="earth-box">
+          <!-- earth -->
           <div id="earth"></div>
-
-          <dl class="infos">
+          <!-- info tag for earth -->
+          <dl class="infos fade">
             <dt>Earth</dt>
             <dd></dd>
           </dl>
+        </div>         
 
-        </div>
-        
-
+        <!-- vertical sunbeam on earth background -->
         <div id="earth-beam"></div>
       </div>
 
-      <!-- other lights -->
+      <!-- camera lights -->
       <div id="light-box">
-        <div id="light-beam-1"></div> <!-- red -->
-        <div id="light-beam-2"></div> <!-- blue -->
-        <div id="light-beam-3"></div> <!-- green -->
-        <div id="light-beam-4"></div> <!-- green -->
+        <div class="lightbeam lightbeam-1 lightbeam-rot lightbeam-blur-4"></div> <!-- red -->
+        <div class="lightbeam lightbeam-2 lightbeam-rot lightbeam-blur-10"></div> <!-- blue -->
+        <div class="lightbeam lightbeam-3 lightbeam-rot lightbeam-blur-10"></div> <!-- green -->
+        <div class="lightbeam lightbeam-4 lightbeam-rot lightbeam-blur-4"></div> <!-- green -->
       </div>
 
-      <div id="saturn">
-
-      </div>
-
+      <!-- transparent saturn overlay -->
       <img id="saturn" src="./saturn.png">
-
     </div> <!-- window end -->
 
-    <!-- tribute text -->
+    <!-- tribute text below window -->
     <div id="tribute-description">
       <p> A tribute to Carl Sagan (1934-1996)</p>
     </div>
+
   </div>	
 
-  <!-- autoplay sagan quote -->
+  <!-- autoplay sagan quote, hidden -->
   <audio autoplay>
     <source src="./quote.mp3" type="audio/mp3">
     <p>Your browser doesn't support HTML5 audio. Here is a <a href="./quote.mp3">link</a> instead.</p>
