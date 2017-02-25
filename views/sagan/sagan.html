@@ -14,54 +14,49 @@
 </head>
 
 <body>
+  
+  <!-- header -->
+  <header>
+    <a href="../../index.html"><h1>Pale Blue Dot</h1></a>   
+  </header>    
 
-  <!-- visible content -->
-  <div id="content">
+  <!-- displays pale blue dot -->
+  <div id="window">
 
-    <!-- header -->
-    <header>
-      <a href="../../index.html"><h1>Pale Blue Dot</h1></a>   
-    </header>    
+    <!-- suspend earth in sunbeam -->
+    <div id="sunbeam">
 
-    <!-- displays pale blue dot -->
-    <div id="window">
+      <!-- contain earth -->
+      <div id="earth-box">
+        <!-- earth -->
+        <div id="earth"></div>
+        <!-- info tag for earth -->
+        <dl class="infos fade">
+          <dt>Earth</dt>
+          <dd></dd>
+        </dl>
+      </div>         
 
-      <!-- suspend earth in sunbeam -->
-      <div id="sunbeam">
-
-        <!-- contain earth -->
-        <div id="earth-box">
-          <!-- earth -->
-          <div id="earth"></div>
-          <!-- info tag for earth -->
-          <dl class="infos fade">
-            <dt>Earth</dt>
-            <dd></dd>
-          </dl>
-        </div>         
-
-        <!-- vertical sunbeam on earth background -->
-        <div id="earth-beam"></div>
-      </div>
-
-      <!-- camera lights -->
-      <div id="light-box">
-        <div class="lightbeam lightbeam-1 lightbeam-rot lightbeam-blur-4"></div> <!-- red -->
-        <div class="lightbeam lightbeam-2 lightbeam-rot lightbeam-blur-10"></div> <!-- blue -->
-        <div class="lightbeam lightbeam-3 lightbeam-rot lightbeam-blur-10"></div> <!-- green -->
-        <div class="lightbeam lightbeam-4 lightbeam-rot lightbeam-blur-4"></div> <!-- green -->
-      </div>
-
-      <!-- transparent saturn overlay -->
-      <img id="saturn" src="./saturn.png">
-    </div> <!-- window end -->
-
-    <!-- tribute text below window -->
-    <div id="tribute-description">
-      <p> A tribute to Carl Sagan (1934-1996)</p>
+      <!-- vertical sunbeam on earth background -->
+      <div id="earth-beam"></div>
     </div>
 
-  </div>	
+    <!-- camera lights -->
+    <div id="light-box">
+      <div class="lightbeam lightbeam-1 lightbeam-rot lightbeam-blur-4"></div> <!-- red -->
+      <div class="lightbeam lightbeam-2 lightbeam-rot lightbeam-blur-10"></div> <!-- blue -->
+      <div class="lightbeam lightbeam-3 lightbeam-rot lightbeam-blur-10"></div> <!-- green -->
+      <div class="lightbeam lightbeam-4 lightbeam-rot lightbeam-blur-4"></div> <!-- green -->
+    </div>
+
+    <!-- transparent saturn overlay -->
+    <img id="saturn" src="./saturn.png">
+  </div> <!-- window end -->
+
+  <!-- tribute text below window -->
+  <div id="tribute-description">
+    <p> A tribute to Carl Sagan (1934-1996)</p>
+  </div>
 
   <!-- autoplay sagan quote, hidden -->
   <audio autoplay>
