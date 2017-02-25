@@ -27,13 +27,6 @@ header h1 {
   padding-left: 1em;
 }
 
-#content {
-    position: absolute;
-    top: inherit;
-    height: inherit;
-    width: inherit;
-}
-
 /* window to space */
 #window {
   background-color: rgba(0,0,0,1); 
