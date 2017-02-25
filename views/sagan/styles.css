@@ -134,13 +134,12 @@ header h1 {
   z-index: 1;  /* behind earth and sunbeam */
   position: absolute;
   top: -1em;
-  height: 120%; 
-}
+  height: 120%;
 
-.lightbeam-rot {
+  /* rot */
   -ms-transform: rotate(9deg); /* IE 9 */
   -webkit-transform: rotate(9deg); /* Chrome, Safari, Opera */
-  transform: rotate(9deg);  
+  transform: rotate(9deg);    
 }
 
 .lightbeam-blur-4 {
