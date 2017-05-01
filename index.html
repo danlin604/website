@@ -1,35 +1,51 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Dan</title>
+    <meta charset="utf-8">  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description"    content="template description">
+    <meta name="keywords"       content="HTML,CSS,JavaScript">
+    <meta name="author"         content="Daniel Lin">
+    <meta name="viewport"       content="width=device-width, initial-scale=1">
 
-	<meta charset="utf-8">	
-	<meta name="description" 	content="template description">
-	<meta name="keywords" 		content="HTML,CSS,JavaScript">
-	<meta name="author" 		content="Daniel Lin">
-	<meta name="viewport"		content="width=device-width, initial-scale=1.0">
+    <title>danlin604</title>
 
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
-	<link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 
-<body>
-  
-  <!-- header -->
-  <header>
-    <a href="./index.html"><h1>Home</h1></a>    
-  </header>
+<body class="container">
 
-  <!-- content -->
-  <div id="content">
+    <header class="header shadow-card">  
+        <h1>danlin604</h1>        
+    </header>
 
-    <ul>
-      <li><a href="./views/fiddle/fiddle.html">Fiddle</a></li>
-      <li><a href="./views/breakout/breakout.html">Breakout</a></li>
-      <li><a href="./views/sagan/sagan.html">Pale Blue Dot</a></li>
-    </ul>
+    <main role="main" class="shadow-inset">
+        <section class="tile-container">
+            <h2 class="tile">projects</h2>
+        
+            <article 
+                class="tile light-green link shadow-card"
+                onclick="window.location='./views/fiddle/fiddle.html';">
+                <header>fiddler</header>
+                <p>js playpen</p>
+            </article>
 
-  </div>
+            <article 
+                class="tile blue link shadow-card"
+                onclick="window.location='./views/sagan/sagan.html';">
+                <header>pale blue dot</header>
+                <p>carl sagan tribute</p>
+            </article>
+
+            <article class="tile dark-grey shadow-card"></article>
+            <article class="tile dark-grey shadow-card"></article>
+        </section>
+    </main>
+
+    <footer class="row shadow-inset">
+        <a href="https://github.com/danlin604">github</a>
+    </footer>
 
 </body>
 </html>

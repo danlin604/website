@@ -1,46 +1,56 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>HTML5 template</title>
+    <meta charset="utf-8">  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description"    content="template description">
+    <meta name="keywords"       content="HTML,CSS,JavaScript">
+    <meta name="author"         content="Daniel Lin">
+    <meta name="viewport"       content="width=device-width, initial-scale=1">
 
-	<meta charset="utf-8">	
-	<meta name="description" 	content="template description">
-	<meta name="keywords" 		content="HTML,CSS,JavaScript">
-	<meta name="author" 		content="Daniel Lin">
-	<meta name="viewport"		content="width=device-width, initial-scale=1.0">
+    <title>danlin604</title>
 
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
-	<link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="./fiddle.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 
-<body>
-  
-  <!-- header -->
-  <header>
-    <a href="../../index.html"><h1>Fiddle</h1></a>   
-  </header>
+<body class="container">
 
-  <!-- content -->
-  <div id="content">
+    <header class="header shadow-card">  
+        <h1><a href="../../index.html">danlin604</a></h1>        
+    </header>
 
-    <!-- card -->
-    <div id="card">
-      <!-- content header -->
-      <div id="card-header">
-        <p>Write and run your own JavaScript code!</p>
-        <button id="run" onclick="runCode()">Run Code</button>
-      </div>    
+    <main role="main" class="shadow-inset">
 
-      <!-- src code -->
-      <textarea name="src" id="src"></textarea>
+            <div id="content">
 
-      <!-- console -->
-      <textarea name="console" id="console"></textarea>
-    
-    </div>
+                <!-- card -->
+                <div id="card">
+                <!-- content header -->
+                <div id="card-header">
+                    <p>Write and run your own JavaScript code!</p>
+                    <button id="run" onclick="runCode()">Run Code</button>
+                </div>    
 
-  </div>	
+                <!-- src code -->
+                <textarea name="src" id="src"></textarea>
 
-	<script src="./fiddle.js"></script>
+                <!-- console -->
+                <textarea name="console" id="console"></textarea>
+                
+                </div>
+
+            </div>	
+
+	
+
+    </main>
+
+    <footer class="row shadow-inset">
+        <a href="https://github.com/danlin604">github</a>
+    </footer>
+
+    <script src="./fiddle.js"></script>
 </body>
 </html>
