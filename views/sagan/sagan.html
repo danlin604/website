@@ -1,68 +1,76 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>HTML5 template</title>
+    <meta charset="utf-8">  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description"    content="template description">
+    <meta name="keywords"       content="HTML,CSS,JavaScript">
+    <meta name="author"         content="Daniel Lin">
+    <meta name="viewport"       content="width=device-width, initial-scale=1">
 
-	<meta charset="utf-8">	
-	<meta name="description" 	content="template description">
-	<meta name="keywords" 		content="HTML,CSS,JavaScript">
-	<meta name="author" 		content="Daniel Lin">
-	<meta name="viewport"		content="width=device-width, initial-scale=1.0">
+    <title>danlin604</title>
 
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
-	<link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="./sagan.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 
-<body>
-  
-  <!-- header -->
-  <header>
-    <a href="../../index.html"><h1>Pale Blue Dot</h1></a>   
-  </header>    
+<body class="container">
 
-  <!-- displays pale blue dot -->
-  <div id="window">
+    <header class="header shadow-card">  
+        <h1><a href="../../index.html">danlin604</a></h1>        
+    </header>
 
-    <!-- suspend earth in sunbeam -->
-    <div id="sunbeam">
+    <main role="main" class="shadow-inset">
 
-      <!-- contain earth -->
-      <div id="earth-box">
-        <!-- earth -->
-        <div id="earth"></div>
-        <!-- info tag for earth -->
-        <dl class="infos fade">
-          <dt>Earth</dt>
-          <dd></dd>
-        </dl>
-      </div>         
+        <!-- displays pale blue dot -->
+        <div id="window">
 
-      <!-- vertical sunbeam on earth background -->
-      <div id="earth-beam"></div>
-    </div>
+            <!-- suspend earth in sunbeam -->
+            <div id="sunbeam">
 
-    <!-- camera lights -->
-    <div id="light-box">
-      <div class="lightbeam lightbeam-1 lightbeam-blur-4"></div> <!-- red -->
-      <div class="lightbeam lightbeam-2 lightbeam-blur-10"></div> <!-- blue -->
-      <div class="lightbeam lightbeam-3 lightbeam-blur-10"></div> <!-- green -->
-      <div class="lightbeam lightbeam-4 lightbeam-blur-4"></div> <!-- green -->
-    </div>
+            <!-- contain earth -->
+            <div id="earth-box">
+                <!-- earth -->
+                <div id="earth"></div>
+                <!-- info tag for earth -->
+                <dl class="infos fade">
+                <dt>Home</dt>
+                <dd></dd>
+                </dl>
+            </div>         
 
-    <!-- transparent saturn overlay -->
-    <img id="saturn" src="./saturn.png">
-  </div> <!-- window end -->
+            <!-- vertical sunbeam on earth background -->
+            <div id="earth-beam"></div>
+            </div>
 
-  <!-- tribute text below window -->
-  <div id="tribute-description">
-    <p> A tribute to Carl Sagan (1934-1996)</p>
-  </div>
+            <!-- camera lights -->
+            <div id="light-box">
+            <div class="lightbeam lightbeam-1 lightbeam-blur-4"></div> <!-- red -->
+            <div class="lightbeam lightbeam-2 lightbeam-blur-10"></div> <!-- blue -->
+            <div class="lightbeam lightbeam-3 lightbeam-blur-10"></div> <!-- green -->
+            <div class="lightbeam lightbeam-4 lightbeam-blur-4"></div> <!-- green -->
+            </div>
 
-  <!-- autoplay sagan quote, hidden -->
-  <audio autoplay>
-    <source src="./quote.mp3" type="audio/mp3">
-    <p>Your browser doesn't support HTML5 audio. Here is a <a href="./quote.mp3">link</a> instead.</p>
-  </audio>
+            <!-- transparent saturn overlay -->
+            <img id="saturn" src="./saturn.png">
+        </div> <!-- window end -->
 
+        <!-- tribute text below window -->
+        <div id="tribute-description">
+            <p> A tribute to Carl Sagan (1934-1996)</p>
+        </div>
+
+    </main>
+
+    <footer class="row shadow-inset">
+        <a href="https://github.com/danlin604">github</a>
+    </footer>
+    
+    <!-- autoplay sagan quote, hidden -->
+    <audio autoplay>
+        <source src="./quote.mp3" type="audio/mp3">
+        <p>Your browser doesn't support HTML5 audio. Here is a <a href="./quote.mp3">link</a> instead.</p>
+    </audio>
 </body>
 </html>

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>HTML5 template</title>
+
+	<meta charset="utf-8">	
+	<meta name="description" 	content="template description">
+	<meta name="keywords" 		content="HTML,CSS,JavaScript">
+	<meta name="author" 		content="Daniel Lin">
+	<meta name="viewport"		content="width=device-width, initial-scale=1.0">
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+	<link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+  
+  <!-- header -->
+  <header>
+    <a href="../../index.html"><h1>Pale Blue Dot</h1></a>   
+  </header>    
+
+  <!-- displays pale blue dot -->
+  <div id="window">
+
+    <!-- suspend earth in sunbeam -->
+    <div id="sunbeam">
+
+      <!-- contain earth -->
+      <div id="earth-box">
+        <!-- earth -->
+        <div id="earth"></div>
+        <!-- info tag for earth -->
+        <dl class="infos fade">
+          <dt>Earth</dt>
+          <dd></dd>
+        </dl>
+      </div>         
+
+      <!-- vertical sunbeam on earth background -->
+      <div id="earth-beam"></div>
+    </div>
+
+    <!-- camera lights -->
+    <div id="light-box">
+      <div class="lightbeam lightbeam-1 lightbeam-blur-4"></div> <!-- red -->
+      <div class="lightbeam lightbeam-2 lightbeam-blur-10"></div> <!-- blue -->
+      <div class="lightbeam lightbeam-3 lightbeam-blur-10"></div> <!-- green -->
+      <div class="lightbeam lightbeam-4 lightbeam-blur-4"></div> <!-- green -->
+    </div>
+
+    <!-- transparent saturn overlay -->
+    <img id="saturn" src="./saturn.png">
+  </div> <!-- window end -->
+
+  <!-- tribute text below window -->
+  <div id="tribute-description">
+    <p> A tribute to Carl Sagan (1934-1996)</p>
+  </div>
+
+  <!-- autoplay sagan quote, hidden -->
+  <audio autoplay>
+    <source src="./quote.mp3" type="audio/mp3">
+    <p>Your browser doesn't support HTML5 audio. Here is a <a href="./quote.mp3">link</a> instead.</p>
+  </audio>
+
+</body>
+</html>

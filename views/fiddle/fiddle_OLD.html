@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>HTML5 template</title>
+
+	<meta charset="utf-8">	
+	<meta name="description" 	content="template description">
+	<meta name="keywords" 		content="HTML,CSS,JavaScript">
+	<meta name="author" 		content="Daniel Lin">
+	<meta name="viewport"		content="width=device-width, initial-scale=1.0">
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+	<link rel="stylesheet" href="./fiddle.css">
+</head>
+
+<body>
+  
+  <!-- header -->
+  <header>
+    <a href="../../index.html"><h1>Fiddle</h1></a>   
+  </header>
+
+  <!-- content -->
+  <div id="content">
+
+    <!-- card -->
+    <div id="card">
+      <!-- content header -->
+      <div id="card-header">
+        <p>Write and run your own JavaScript code!</p>
+        <button id="run" onclick="runCode()">Run Code</button>
+      </div>    
+
+      <!-- src code -->
+      <textarea name="src" id="src"></textarea>
+
+      <!-- console -->
+      <textarea name="console" id="console"></textarea>
+    
+    </div>
+
+  </div>	
+
+	<script src="./fiddle.js"></script>
+</body>
+</html>
