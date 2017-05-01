@@ -51,7 +51,6 @@ main {
     height: 128px;
     width: 128px;    
     padding: 16px;
-    color: #dedede;
 }
 
 .link:hover {
@@ -152,13 +151,16 @@ a:visited {
 
 /* material.io colors */
 .light-green {
-    background-color: #8BC34A;
+    background-color: #8BC34A;    
+    color: #dedede;
 }
 
 .blue {
     background-color: #2196F3;
+    color: #dedede;
 }
 
 .dark-grey {
     background-color: #4c4c4c;
+    color: #dedede;
 }
