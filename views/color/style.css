@@ -1,7 +1,9 @@
 /* Wireframe */
+/*
 * {
     border: 1px solid red !important;
 }
+*/
 
 
 * {
@@ -31,6 +33,7 @@ main {
 
 article {
     margin: 10px;
+    background-color: #fff;
 }
 
 .tile-container {
@@ -48,13 +51,6 @@ article {
     width: 100%;
     align-self: flex-start;
     padding-left: 32px;
-}
-
-.tile {    
-    margin: 16px;
-    height: 128px;
-    width: 128px;    
-    padding: 16px;
 }
 
 .link:hover {
