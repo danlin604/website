@@ -29,6 +29,13 @@ main {
     flex: 1;
 }
 
+nav a {
+    float: left;
+    text-align: center;
+    padding: 16px;
+    height: 54px;
+}
+
 .tile-container {
     margin-top: 32px;
     display: flex;
@@ -43,7 +50,6 @@ main {
     color: #dedede;
     width: 100%;
     align-self: flex-start;
-    padding-left: 32px;
 }
 
 .tile {    
@@ -66,6 +72,98 @@ main {
     flex-flow: column;
     font-family: 'Roboto', sans-serif;    
 }
+
+
+
+.shadow-under {
+    -webkit-box-shadow: 0px 10px 16px 0px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 10px 16px 0px rgba(0,0,0,0.3);
+    box-shadow: 0px 10px 16px 0px rgba(0,0,0,0.3);
+}
+
+.shadow-card {
+    -webkit-box-shadow: 10px 10px 16px 0px rgba(0,0,0,0.3);
+    -moz-box-shadow: 10px 10px 16px 0px rgba(0,0,0,0.3);
+    box-shadow: 10px 10px 16px 0px rgba(0,0,0,0.3);
+}
+
+.shadow-inset {
+    -webkit-box-shadow: inset 0px 110px 16px -100px rgba(0,0,0,0.3);
+    -moz-box-shadow: inset 0px 110px 16px -100px rgba(0,0,0,0.3);
+    box-shadow: inset 0px 110px 16px -100px rgba(0,0,0,0.3);
+}
+
+a:link {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: auto;
+}
+
+a:visited {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: auto;
+}
+
+/* material.io colors */
+.light-green {
+    background-color: #8BC34A;    
+    color: #dedede;
+}
+
+.blue {
+    background-color: #2196F3;
+    color: #dedede;
+}
+
+.dark-grey {
+    background-color: #4c4c4c;
+    color: #dedede;
+}
+
+nav a:hover {
+  background-color: #dedede;
+  color: #4c4c4c;
+}
+
+nav a.icon {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+
+    .horizontalNav a:not(:first-child) {
+        display: none;
+    }
+
+    .horizontalNav a.icon {
+        float: right;
+        display: block;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    .verticalNav {
+        position: relative;
+    }
+
+    .verticalNav .icon {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .verticalNav a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+}
+
+
+
 
 .row {
     width: 100%;
@@ -117,50 +215,4 @@ main {
 
 .col-12 {
     width: 100%;
-}
-
-.shadow-under {
-    -webkit-box-shadow: 0px 10px 16px 0px rgba(0,0,0,0.3);
-    -moz-box-shadow: 0px 10px 16px 0px rgba(0,0,0,0.3);
-    box-shadow: 0px 10px 16px 0px rgba(0,0,0,0.3);
-}
-
-.shadow-card {
-    -webkit-box-shadow: 10px 10px 16px 0px rgba(0,0,0,0.3);
-    -moz-box-shadow: 10px 10px 16px 0px rgba(0,0,0,0.3);
-    box-shadow: 10px 10px 16px 0px rgba(0,0,0,0.3);
-}
-
-.shadow-inset {
-    -webkit-box-shadow: inset 0px 110px 16px -100px rgba(0,0,0,0.3);
-    -moz-box-shadow: inset 0px 110px 16px -100px rgba(0,0,0,0.3);
-    box-shadow: inset 0px 110px 16px -100px rgba(0,0,0,0.3);
-}
-
-a:link {
-    text-decoration: inherit;
-    color: inherit;
-    cursor: auto;
-}
-
-a:visited {
-    text-decoration: inherit;
-    color: inherit;
-    cursor: auto;
-}
-
-/* material.io colors */
-.light-green {
-    background-color: #8BC34A;    
-    color: #dedede;
-}
-
-.blue {
-    background-color: #2196F3;
-    color: #dedede;
-}
-
-.dark-grey {
-    background-color: #4c4c4c;
-    color: #dedede;
 }

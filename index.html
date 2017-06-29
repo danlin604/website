@@ -12,36 +12,31 @@
 
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script src="scripts/nav.js" async></script>
+
+    <!--<link rel="stylesheet" href="views/fiddle/fiddle.css" media="none" onload="if(media!='all')media='all'">-->
+    <!--<script src="scripts/fiddle.js" async></script> -->
+
+    <script src="https://polygit.org/components/webcomponentsjs/webcomponents-loader.js"></script>
+    <link rel="import" href="components/project-element.html">  
+    <link rel="import" href="components/fiddle-element.html">    
+
 </head>
 
-<body class="container">
+<body class="container">    
 
-    <header class="header shadow-card">  
-        <h1>danlin604</h1>        
+    <header class="header shadow-card">
+        <nav id="menu" class="horizontalNav">
+            <a href="#">danlin604</a>
+            <a href="#">about</a>
+            <a href="javascript:;" onclick="loadComponent('project-element');">projects</a>
+            <a href="#">contact</a>
+            <a class="icon" href="#" onclick="expandMenu()">&#9776;</a>
+        </nav>     
     </header>
 
-    <main role="main" class="shadow-inset">
-        <section class="tile-container">
-            <h2 class="tile">projects</h2>
-        
-            <article 
-                class="tile light-green link shadow-card"
-                onclick="window.location='./views/fiddle/fiddle.html';">
-                <header>fiddler</header>
-                <p>js playpen</p>
-            </article>
-
-            <article 
-                class="tile blue link shadow-card"
-                onclick="window.location='./views/sagan/sagan.html';">
-                <header>pale blue dot</header>
-                <p>carl sagan tribute</p>
-            </article>
-
-            <article class="tile dark-grey shadow-card"></article>
-            <article class="tile dark-grey shadow-card"></article>
-        
-        </section>
+    <main role="main" id="main" class="shadow-inset">        
+        <project-element></project-element>
     </main>
 
     <footer class="row shadow-inset">

@@ -1,0 +1,173 @@
+<link rel="import" href="https://polygit.org/components/polymer/polymer-element.html">
+
+<dom-module id="fiddle-element">
+
+    <template>
+        <!-- scoped CSS for this element -->
+        <style>
+            textarea {
+                border: 0;
+                height: 400px;
+                width: 100%;
+                overflow: auto;
+                background-color: #272822;
+                color: #F8F8F2;
+                font-family: 'Consolas', 'Courier New', 'monospace';
+
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+
+                resize: none;
+            }
+
+            #card {
+                color: rgba(100, 100, 100, 0.87);
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 2em;
+                margin-bottom: 2em;
+                padding: 0.5em;
+                border: 0;
+                width: 90%;
+                height: 100%;
+                background-color: rgba(255, 255, 255, 0.87);
+                box-shadow: 4px 4px 4px 2px rgba(160, 160, 160, 0.87);
+            }
+
+            button {
+                background-color: #7FB347;
+                /* Green */
+                border: none;
+                color: white;
+                padding: 0.5em 1em;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+            }
+
+            #console {
+                margin: 0;
+                padding: 0;
+                border: 0;
+                color: #FFFFFF;
+
+                background-color: #000000;
+                height: 200px;
+                width: 100%;
+            }
+        </style>
+
+        <div id="content">
+            <!-- card -->
+            <div id="card">
+                <!-- content header -->
+                <div id="card-header">
+                    <p>Write your own JavaScript code!</p>
+                    <button id="run" on-click="runCode">Run Code</button>
+                </div>
+                <!-- src code -->
+                <textarea name="src" id="src">console.log('howdy!')</textarea>
+                <!-- console -->
+                <textarea name="console" id="console"></textarea>
+            </div>
+        </div>
+    </template>
+
+    <script>
+        class FiddleElement extends Polymer.Element {
+
+            static get is() { return "fiddle-element"; }
+
+            runCode() {
+                let logger = this.$.console
+                let src = this.$.src.value
+                logger.value = ''
+                eval(src)
+            }
+
+
+            ready() {
+                super.ready();
+
+                let _log = console.log
+                let _console = this.$.console
+
+                ;(function () {
+                    window.onerror = function (msg, url, lineNo, columnNo, error) {
+                        let string = msg.toLowerCase()
+
+                        let message = [
+                            'Message: ' + msg,
+                            'URL: ' + url,
+                            'Line: ' + lineNo,
+                            'Column: ' + columnNo,
+                            'Error object: ' + JSON.stringify(error)
+                        ].join(' - ');
+
+                        print(message)
+
+                        return false // enable error in console 
+                    }
+
+                    // print console.log to textarea
+                    console.log = function (msg) {
+                        print(msg)
+                    }
+
+                    // print to textarea
+                    function print(msg) {
+                        if (typeof msg == 'object') {
+                            _console.value += (JSON && JSON.stringify ? JSON.stringify(msg) : msg) + '\n'
+                        } else {
+                            _console.value += msg + '\n'
+                        }
+                    }
+                })()
+
+                // code syntax dictionary
+                const keys = new Map([
+                    ['Tab', 'Tab'],
+                    ['\'', '\''],
+                    ['\"', '\"'],
+                    ['(', ')'],
+                    ['[', ']'],
+                    ['{', '}'], // trailing comma ignored
+                ])
+
+                // read textarea input
+                this.$.src.addEventListener('keydown', function (e) {
+                    if (keys.has(e.key)) {
+                        // get caret pos
+                        let start = this.selectionStart
+                        let end = this.selectionEnd
+                        
+                        let target = e.target
+                        let value = target.value
+
+                        if (e.key === 'Tab') {
+                            // set textarea value to: text before caret + tab + text after caret
+                            target.value = `${value.substring(0, start)}  ${value.substring(end)}`
+                            // put caret at right position again (add one for the tab)
+                            this.selectionStart = this.selectionEnd = start + 2
+                        } else {
+                            target.value = value.substring(0, start) +
+                                e.key +
+                                keys.get(e.key) +
+                                value.substring(end)
+
+                            // put caret at right position again (add one for the tab)
+                            this.selectionStart = this.selectionEnd = start + 1
+                        }
+
+                        // prevent the focus lose
+                        e.preventDefault()
+                    }
+                }, false)
+            }
+        }
+
+        customElements.define(FiddleElement.is, FiddleElement);
+    </script>
+</dom-module>
