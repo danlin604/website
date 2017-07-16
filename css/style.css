@@ -84,6 +84,11 @@ a:link {
     cursor: auto;
 }
 
+a:hover {
+    cursor: pointer; 
+    cursor: hand;
+}
+
 a:visited {
     text-decoration: inherit;
     color: inherit;

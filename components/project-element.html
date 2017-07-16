@@ -1,11 +1,7 @@
-<link rel="import" href="https://rawgit.com/Polymer/polymer/master/polymer-element.html">
-<!-- <link rel="import" href="https://polygit.org/components/polymer/polymer-element.html"> -->
 <dom-module id="project-element">
-
     <template>
         <!-- scoped CSS for this element -->
         <style>
-
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -139,7 +135,7 @@ a:visited {
                 <p>js playpen</p>
             </article>
 
-            <article class="tile dark-grey link shadow-card" onclick="window.location='./views/sagan/sagan.html';">
+            <article class="tile dark-grey link shadow-card" onclick="loadComponent('carl-element');">
                 <header>pale blue dot</header>
                 <p>carl sagan tribute</p>
             </article>
@@ -151,10 +147,8 @@ a:visited {
 
     <script>
         class ProjectElement extends Polymer.Element {
-
             static get is() { return "project-element"; }
         }
-
         customElements.define(ProjectElement.is, ProjectElement);
     </script>
 </dom-module>

@@ -1,10 +1,17 @@
-<link rel="import" href="https://polygit.org/components/polymer/polymer-element.html">
-<!-- <link rel="import" href="https://polygit.org/components/polymer/polymer-element.html"> -->
 <dom-module id="fiddle-element">
-
     <template>
         <!-- scoped CSS for this element -->
         <style>
+
+            .card-container {
+                color: #4c4c4c;
+                margin-top: 32px;
+                margin-bottom: 32px;
+                margin-left: auto;
+                margin-right: auto;
+                width: 80%;
+            }
+
             textarea {
                 border: 0;
                 height: 400px;
@@ -36,15 +43,19 @@
             }
 
             button {
-                background-color: #7FB347;
+                background-color: #4c4c4c;
                 /* Green */
                 border: none;
-                color: white;
+                color: #fff;
                 padding: 0.5em 1em;
                 text-align: center;
                 text-decoration: none;
                 display: inline-block;
                 font-size: 16px;
+            }
+            button:hover {
+                cursor: pointer; 
+                cursor: hand;
             }
 
             #console {
@@ -57,24 +68,24 @@
                 height: 200px;
                 width: 100%;
             }
+
+            .shadow-card {
+                -webkit-box-shadow: 10px 10px 16px 0px rgba(0,0,0,0.3);
+                -moz-box-shadow: 10px 10px 16px 0px rgba(0,0,0,0.3);
+                box-shadow: 10px 10px 16px 0px rgba(0,0,0,0.3);
+            }
+
         </style>
 
-        <div id="content">
-            <!-- card -->
-            <div id="card">
-                <!-- content header -->
-                <div id="card-header">
-                    <p>Write your own JavaScript code!</p>
-                    <button id="run" on-click="runCode">Run Code</button>
-                </div>
-                <!-- src code -->
-                <textarea name="src" id="src">console.log('howdy!')</textarea>
-                <!-- console -->
-                <textarea name="console" id="console"></textarea>
-            </div>
-        </div>
+        <!-- card -->
+        <section class="card-container">
+            <button id="run" class="shadow-card" on-click="runCode">Run Code</button>
+            <!-- src code -->
+            <textarea name="src" class="shadow-card" id="src">/* Write some JavaScript code below! */</textarea>
+            <!-- console -->
+            <textarea name="console" class="shadow-card" id="console"></textarea>
+        </section>
     </template>
-
     <script>
         class FiddleElement extends Polymer.Element {
 
@@ -86,7 +97,6 @@
                 logger.value = ''
                 eval(src)
             }
-
 
             ready() {
                 super.ready();
@@ -167,7 +177,6 @@
                 }, false)
             }
         }
-
         customElements.define(FiddleElement.is, FiddleElement);
     </script>
 </dom-module>
