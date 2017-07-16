@@ -36,27 +36,12 @@ nav a {
     height: 54px;
 }
 
-.tile-container {
-    margin-top: 32px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    color: #273746;
-}
-
 .header {
     margin: 0;
     background-color: #4c4c4c;
     color: #dedede;
     width: 100%;
     align-self: flex-start;
-}
-
-.tile {    
-    margin: 16px;
-    height: 128px;
-    width: 128px;    
-    padding: 16px;
 }
 
 .link:hover {

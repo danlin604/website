@@ -1,5 +1,5 @@
-<link rel="import" href="https://polygit.org/components/polymer/polymer-element.html">
-
+<link rel="import" href="https://rawgit.com/Polymer/polymer/master/polymer-element.html">
+<!-- <link rel="import" href="https://polygit.org/components/polymer/polymer-element.html"> -->
 <dom-module id="project-element">
 
     <template>
@@ -18,7 +18,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    color: #273746;
+    color: #4c4c4c;    
 }
 
 .tile {    
@@ -31,15 +31,6 @@
 .link:hover {
     cursor: pointer; 
     cursor: hand;
-}
-
-.container {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-flow: column;
-    font-family: 'Roboto', sans-serif;    
 }
 
 .shadow-card {
@@ -67,32 +58,88 @@ a:visited {
 }
 
 /* material.io colors */
-.light-green {
-    background-color: #8BC34A;    
-    color: #dedede;
+.green {
+    background-color: #558b2f;    
+    color: #fff;
 }
 
 .blue {
     background-color: #2196F3;
-    color: #dedede;
+    color: #fff;
+}
+
+.dark-blue {
+    background-color: #0277bd;
+    color: #fff;
+}
+
+.orange {
+    background-color: #ef6c00;
+    color: #fff;
+}
+
+.red {
+    background-color: #b71c1c;
+    color: #fff;
 }
 
 .dark-grey {
     background-color: #4c4c4c;
-    color: #dedede;
+    color: #fff;
+}
+.dark-grey-inverse {
+    background-color: #fff;
+    color: #4c4c4c;
 }
 
-        </style>
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: #273746;
+}
+
+.card {
+    margin-top: 32px;
+    width: 80%;
+    max-width: 1024px;
+    padding: 16px;
+}
+
+.circle {
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    line-height: 60px;
+    -moz-border-radius: 30px; /* or 50% */
+    border-radius: 30px; /* or 50% */
+    background-color: #4c4c4c;
+    color: #fff;
+    text-align: center;
+    font-size: 32px;
+    margin-right: 4px;
+}
+
+    </style>
+        <section class="card-container">
+            <article class="card dark-grey-inverse shadow-card">
+                <header>
+                    <span class="circle">dan</span>                    
+                </header>
+                <p>Hey again,</p>
+                <p>Here are some of my projects. You can find more over at Github!</p>
+            </article>
+        </section>
 
         <section class="tile-container">
             <h2 class="tile">projects</h2>
 
-            <article class="tile light-green link shadow-card" onclick="loadComponent('fiddle-element');">
+            <article class="tile dark-grey link shadow-card" onclick="loadComponent('fiddle-element');">
                 <header>fiddler</header>
                 <p>js playpen</p>
             </article>
 
-            <article class="tile blue link shadow-card" onclick="window.location='./views/sagan/sagan.html';">
+            <article class="tile dark-grey link shadow-card" onclick="window.location='./views/sagan/sagan.html';">
                 <header>pale blue dot</header>
                 <p>carl sagan tribute</p>
             </article>

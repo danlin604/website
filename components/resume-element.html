@@ -1,0 +1,170 @@
+<link rel="import" href="https://rawgit.com/Polymer/polymer/master/polymer-element.html">
+<!-- <link rel="import" href="https://polygit.org/components/polymer/polymer-element.html"> -->
+<dom-module id="resume-element">
+
+    <template>
+        <!-- scoped CSS for this element -->
+        <style>
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: #4c4c4c;    
+}
+
+.card {
+    margin-top: 32px;
+    width: 80%;
+    max-width: 1024px;
+    padding: 16px;
+}
+
+.card-halved {
+    width: 40%;
+    max-width: 512px;
+    padding: 16px;
+    margin-bottom: 32px;    
+}
+
+.link:hover {
+    cursor: pointer; 
+    cursor: hand;
+}
+
+.shadow-card {
+    -webkit-box-shadow: 10px 10px 16px 0px rgba(0,0,0,0.3);
+    -moz-box-shadow: 10px 10px 16px 0px rgba(0,0,0,0.3);
+    box-shadow: 10px 10px 16px 0px rgba(0,0,0,0.3);
+}
+
+/* material.io colors */
+.green {
+    background-color: #558b2f;    
+    color: #fff;
+}
+
+.blue {
+    background-color: #2196F3;
+    color: #fff;
+}
+
+.dark-blue {
+    background-color: #0277bd;
+    color: #fff;
+}
+
+.orange {
+    background-color: #ef6c00;
+    color: #fff;
+}
+
+.red {
+    background-color: #b71c1c;
+    color: #fff;
+}
+
+.dark-grey {
+    background-color: #4c4c4c;
+    color: #fff;
+}
+.dark-grey-inverse {
+    background-color: #fff;
+    color: #4c4c4c;
+}
+
+.circle {
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    line-height: 60px;
+    -moz-border-radius: 30px; /* or 50% */
+    border-radius: 30px; /* or 50% */
+    background-color: #4c4c4c;
+    color: #fff;
+    text-align: center;
+    font-size: 32px;
+    margin-right: 4px;
+}
+
+@media (max-width: 480px) 
+{
+    .card-halved {
+        width: 80%;
+        max-width: 1024px;
+        padding: 16px;
+        margin-bottom: 32px;
+    }
+}
+
+        </style>
+        
+        <section class="card-container">
+            <article class="card dark-grey-inverse shadow-card">
+                <header>
+                    <span class="circle">dan</span>                    
+                </header>
+                <p>Hey there,</p>
+                <p>My name is Dan and I am a software developer. JavaScript is my latest passion. There is little else that I enjoy more than to sit down, and grok new ideas. Be sure to checkout some of my projects.</p>
+            </article>
+        </section>
+
+        <section class="card-container">
+            <h2 class="card">skills</h2>
+        </section>
+        <section class="card-container">            
+            <article class="card-halved dark-grey-inverse shadow-card">
+                <p>
+                    <strong>Working Knowledge:</strong><br>
+                    Android, CSS3, Git, HTML5, Java, JavaScript, T-SQL
+                </p>
+            </article>
+            <article class="card-halved dark-grey shadow-card">
+                <header>
+                    <!-- <span class="circle">Skills</span> -->
+                </header>
+                <p>
+                    <strong>Basic Knowledge:</strong><br>
+                    Agile, Angular, C, C++, C#, Code Igniter, JIRA, jQuery, Linux, MySQL, Node, PHP, React, SVN, Mocha, Jasmine, JUnit
+                </p> 
+            </article>
+        </section>
+
+        <section class="card-container">
+            <h2 class="card">education</h2>
+        </section>
+        <section class="card-container">
+            <article class="card-halved dark-grey-inverse shadow-card">
+                <p>
+                    <strong>British Columbia Institute of Technology</strong><br>
+                    Diploma - Computer Systems Technology<br>
+                    Graduated with Distinction<br>
+                    2014 – 2016<br>
+                </p>
+            </article>
+            <article class="card-halved dark-grey shadow-card">
+                <p>
+                    <strong>Simon Fraser University</strong><br>
+                    Bachelor of Arts - English<br> 
+                    2008 – 2012<br>
+                </p>
+            </article>
+        </section>
+    </template>
+
+    <script>
+        class ResumeElement extends Polymer.Element {
+
+            static get is() { return "resume-element"; }
+        }
+        customElements.define(ResumeElement.is, ResumeElement);
+    </script>
+
+</dom-module>
