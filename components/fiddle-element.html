@@ -2,7 +2,6 @@
     <template>
         <!-- scoped CSS for this element -->
         <style>
-
             .card-container {
                 color: #4c4c4c;
                 margin-top: 32px;
@@ -53,8 +52,9 @@
                 display: inline-block;
                 font-size: 16px;
             }
+
             button:hover {
-                cursor: pointer; 
+                cursor: pointer;
                 cursor: hand;
             }
 
@@ -70,11 +70,10 @@
             }
 
             .shadow-card {
-                -webkit-box-shadow: 10px 10px 16px 0px rgba(0,0,0,0.3);
-                -moz-box-shadow: 10px 10px 16px 0px rgba(0,0,0,0.3);
-                box-shadow: 10px 10px 16px 0px rgba(0,0,0,0.3);
+                -webkit-box-shadow: 10px 10px 16px 0px rgba(0, 0, 0, 0.3);
+                -moz-box-shadow: 10px 10px 16px 0px rgba(0, 0, 0, 0.3);
+                box-shadow: 10px 10px 16px 0px rgba(0, 0, 0, 0.3);
             }
-
         </style>
 
         <!-- card -->
@@ -104,37 +103,37 @@
                 let _log = console.log
                 let _console = this.$.console
 
-                ;(function () {
-                    window.onerror = function (msg, url, lineNo, columnNo, error) {
-                        let string = msg.toLowerCase()
+                    ; (function () {
+                        window.onerror = function (msg, url, lineNo, columnNo, error) {
+                            let string = msg.toLowerCase()
 
-                        let message = [
-                            'Message: ' + msg,
-                            'URL: ' + url,
-                            'Line: ' + lineNo,
-                            'Column: ' + columnNo,
-                            'Error object: ' + JSON.stringify(error)
-                        ].join(' - ');
+                            let message = [
+                                'Message: ' + msg,
+                                'URL: ' + url,
+                                'Line: ' + lineNo,
+                                'Column: ' + columnNo,
+                                'Error object: ' + JSON.stringify(error)
+                            ].join(' - ');
 
-                        print(message)
+                            print(message)
 
-                        return false // enable error in console 
-                    }
-
-                    // print console.log to textarea
-                    console.log = function (msg) {
-                        print(msg)
-                    }
-
-                    // print to textarea
-                    function print(msg) {
-                        if (typeof msg == 'object') {
-                            _console.value += (JSON && JSON.stringify ? JSON.stringify(msg) : msg) + '\n'
-                        } else {
-                            _console.value += msg + '\n'
+                            return false // enable error in console 
                         }
-                    }
-                })()
+
+                        // print console.log to textarea
+                        console.log = function (msg) {
+                            print(msg)
+                        }
+
+                        // print to textarea
+                        function print(msg) {
+                            if (typeof msg == 'object') {
+                                _console.value += (JSON && JSON.stringify ? JSON.stringify(msg) : msg) + '\n'
+                            } else {
+                                _console.value += msg + '\n'
+                            }
+                        }
+                    })()
 
                 // code syntax dictionary
                 const keys = new Map([
@@ -152,7 +151,7 @@
                         // get caret pos
                         let start = this.selectionStart
                         let end = this.selectionEnd
-                        
+
                         let target = e.target
                         let value = target.value
 

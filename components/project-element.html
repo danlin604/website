@@ -2,125 +2,127 @@
     <template>
         <!-- scoped CSS for this element -->
         <style>
-* {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -ms-box-sizing: border-box;
-    box-sizing: border-box;
-}
+            * {
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                -ms-box-sizing: border-box;
+                box-sizing: border-box;
+            }
 
-.tile-container {
-    margin-top: 32px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    color: #4c4c4c;    
-}
+            .tile-container {
+                margin-top: 32px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                color: #4c4c4c;
+            }
 
-.tile {    
-    margin: 16px;
-    height: 128px;
-    width: 128px;    
-    padding: 16px;
-}
+            .tile {
+                margin: 16px;
+                height: 128px;
+                width: 128px;
+                padding: 16px;
+            }
 
-.link:hover {
-    cursor: pointer; 
-    cursor: hand;
-}
+            .link:hover {
+                cursor: pointer;
+                cursor: hand;
+            }
 
-.shadow-card {
-    -webkit-box-shadow: 10px 10px 16px 0px rgba(0,0,0,0.3);
-    -moz-box-shadow: 10px 10px 16px 0px rgba(0,0,0,0.3);
-    box-shadow: 10px 10px 16px 0px rgba(0,0,0,0.3);
-}
+            .shadow-card {
+                -webkit-box-shadow: 10px 10px 16px 0px rgba(0, 0, 0, 0.3);
+                -moz-box-shadow: 10px 10px 16px 0px rgba(0, 0, 0, 0.3);
+                box-shadow: 10px 10px 16px 0px rgba(0, 0, 0, 0.3);
+            }
 
-.shadow-inset {
-    -webkit-box-shadow: inset 0px 110px 16px -100px rgba(0,0,0,0.3);
-    -moz-box-shadow: inset 0px 110px 16px -100px rgba(0,0,0,0.3);
-    box-shadow: inset 0px 110px 16px -100px rgba(0,0,0,0.3);
-}
+            .shadow-inset {
+                -webkit-box-shadow: inset 0px 110px 16px -100px rgba(0, 0, 0, 0.3);
+                -moz-box-shadow: inset 0px 110px 16px -100px rgba(0, 0, 0, 0.3);
+                box-shadow: inset 0px 110px 16px -100px rgba(0, 0, 0, 0.3);
+            }
 
-a:link {
-    text-decoration: inherit;
-    color: inherit;
-    cursor: auto;
-}
+            a:link {
+                text-decoration: inherit;
+                color: inherit;
+                cursor: auto;
+            }
 
-a:visited {
-    text-decoration: inherit;
-    color: inherit;
-    cursor: auto;
-}
+            a:visited {
+                text-decoration: inherit;
+                color: inherit;
+                cursor: auto;
+            }
+            /* material.io colors */
 
-/* material.io colors */
-.green {
-    background-color: #558b2f;    
-    color: #fff;
-}
+            .green {
+                background-color: #558b2f;
+                color: #fff;
+            }
 
-.blue {
-    background-color: #2196F3;
-    color: #fff;
-}
+            .blue {
+                background-color: #2196F3;
+                color: #fff;
+            }
 
-.dark-blue {
-    background-color: #0277bd;
-    color: #fff;
-}
+            .dark-blue {
+                background-color: #0277bd;
+                color: #fff;
+            }
 
-.orange {
-    background-color: #ef6c00;
-    color: #fff;
-}
+            .orange {
+                background-color: #ef6c00;
+                color: #fff;
+            }
 
-.red {
-    background-color: #b71c1c;
-    color: #fff;
-}
+            .red {
+                background-color: #b71c1c;
+                color: #fff;
+            }
 
-.dark-grey {
-    background-color: #4c4c4c;
-    color: #fff;
-}
-.dark-grey-inverse {
-    background-color: #fff;
-    color: #4c4c4c;
-}
+            .dark-grey {
+                background-color: #4c4c4c;
+                color: #fff;
+            }
 
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    color: #273746;
-}
+            .dark-grey-inverse {
+                background-color: #fff;
+                color: #4c4c4c;
+            }
 
-.card {
-    margin-top: 32px;
-    width: 80%;
-    max-width: 1024px;
-    padding: 16px;
-}
+            .card-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                color: #273746;
+            }
 
-.circle {
-    display: inline-block;
-    height: 60px;
-    width: 60px;
-    line-height: 60px;
-    -moz-border-radius: 30px; /* or 50% */
-    border-radius: 30px; /* or 50% */
-    background-color: #4c4c4c;
-    color: #fff;
-    text-align: center;
-    font-size: 32px;
-    margin-right: 4px;
-}
+            .card {
+                margin-top: 32px;
+                width: 80%;
+                max-width: 1024px;
+                padding: 16px;
+            }
 
-    </style>
+            .circle {
+                display: inline-block;
+                height: 60px;
+                width: 60px;
+                line-height: 60px;
+                -moz-border-radius: 30px;
+                /* or 50% */
+                border-radius: 30px;
+                /* or 50% */
+                background-color: #4c4c4c;
+                color: #fff;
+                text-align: center;
+                font-size: 32px;
+                margin-right: 4px;
+            }
+        </style>
         <section class="card-container">
             <article class="card dark-grey-inverse shadow-card">
                 <header>
-                    <span class="circle">dan</span>                    
+                    <span class="circle">dan</span>
                 </header>
                 <p>Hey again,</p>
                 <p>Here are some of my projects. You can find more over at Github!</p>
