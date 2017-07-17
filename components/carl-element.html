@@ -264,7 +264,7 @@
             </div>
 
             <!-- transparent saturn overlay -->
-            <img id="saturn" src="./images/saturn.png">
+            <img id="saturn" src="./images/saturn_s.png">
         </div> <!-- window end -->
 
         <!-- tribute text below window -->
@@ -273,16 +273,29 @@
         </div>
 
         <!-- autoplay sagan quote, hidden -->
+        <!--
         <audio autoplay>
-            <source src="./audio/quote.mp3" type="audio/mp3">
-            <!-- <p>Your browser doesn't support HTML5 audio. Here is a <a href="./quote.mp3">link</a> instead.</p> -->
+            <source src="audio/quote.mp3" type="audio/mp3">
+            <p>Your browser doesn't support HTML5 audio. Here is a <a href="./quote.mp3">link</a> instead.</p>
         </audio>
+        -->
 
     </template>
 
     <script>
         class CarlElement extends Polymer.Element {
             static get is() { return "carl-element"; }
+
+            ready() {
+              super.ready();
+              var audio = document.createElement("audio");
+              if (audio != null && audio.canPlayType && audio.canPlayType("audio/mpeg"))
+              {
+                audio.src = "audio/quote.mp3";
+                audio.play();
+              }
+            }
+            
         }
         customElements.define(CarlElement.is, CarlElement);
     </script>
